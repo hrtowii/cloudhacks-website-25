@@ -49,7 +49,7 @@
 @layer base {
     html {
         @apply font-outfit;
-        @apply text-rose-pine-text dark:text-latte-rose-pine-text;
+        @apply text-latte-rose-pine-text dark:text-latte-rose-pine-text;
         @apply bg-latte-rose-pine-base dark:bg-rose-pine-base;
     }
 }
