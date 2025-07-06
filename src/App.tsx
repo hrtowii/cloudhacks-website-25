@@ -149,40 +149,49 @@ export default function HomePage() {
 
       {/* What's Happening Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-fancy-white to-fancy-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl animated-gradient font-bold mb-12">
-            What's Happening?
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <img
-              src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=300&fit=crop&crop=center"
-              alt="Past hackathon statistics and participants"
-              className="rounded-lg shadow-lg mb-8 w-full h-auto"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card>
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col col-reverse lg:col-start-2 lg:col-end-3 order-1 lg:order-2">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl animated-gradient font-bold mb-6 text-center lg:text-right leading-tight">
+                What's
+                <br />
+                Happening?
+              </h2>
+            </div>
+            <div className="order-2 lg:order-1">
+              <Card className="border-0 shadow-none">
                 <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-light-blue">
-                    25+
+                  <CardTitle className="text-2xl">
+                    CloudHacks 2025 - Hybrid Format
                   </CardTitle>
-                  <CardDescription>Projects Submitted</CardDescription>
+                  <CardDescription className="text-lg">
+                    CloudHacks runs annually, and in those annual events, we
+                    give participants a set of problem statements to solve for.
+                    For 24 hours, participants will work in teams of up to 4 to
+                    create a website, game, app, or any tech-related product and
+                    bring their ideas to life.
+                  </CardDescription>
                 </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-medium-blue">
-                    150+
-                  </CardTitle>
-                  <CardDescription>Participants</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-light-green">
-                    $2400+
-                  </CardTitle>
-                  <CardDescription>in Prizes</CardDescription>
-                </CardHeader>
+                <div className="px-6 pb-6">
+                  <p className="text-lg mb-6">
+                    This year, our event will be in a hybrid format - we'll be
+                    hosting workshops before the main hackathon if you're new to
+                    programming or want to learn more!
+                  </p>
+                  <Button
+                    size="lg"
+                    asChild
+                    className="bg-gradient-to-r from-light-blue to-medium-blue hover:from-light-blue hover:to-medium-blue"
+                  >
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSexEqXY7S5RviJIrCII6WQLUICrdxJAnhslrQ7MTI9R9hUGJQ/viewform"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Learn More <ExternalLink className="ml-2 w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
               </Card>
             </div>
           </div>
@@ -192,20 +201,28 @@ export default function HomePage() {
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-4xl animated-gradient font-bold text-center mb-12">
+          <h2 className="text-4xl md:text-5xl animated-gradient font-bold text-center mb-12">
             Frequently Asked Questions
           </h2>
           <div className="max-w-4xl mx-auto">
             <Accordion
               type="single"
               collapsible
-              className="space-y-4"
+              // className="space-y-6"
               defaultValue="item-1"
             >
               {faqData.map((faq) => (
-                <AccordionItem key={faq.id} value={faq.id}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                <AccordionItem
+                  key={faq.id}
+                  value={faq.id}
+                  className="border-b-2"
+                >
+                  <AccordionTrigger className="text-lg md:text-xl font-semibold py-6 hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base md:text-lg leading-relaxed pt-2 pb-6">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -283,7 +300,11 @@ export default function HomePage() {
                 <ExternalLink className="ml-2 w-4 h-4" />
               </a>
             </Button>
-            <img src="cloud_sponsor.png" alt="sponsorpls" className="my-10" />
+            <img
+              src="cloud_sponsor.png"
+              alt="sponsorpls"
+              className="my-10 max-w-md mx-auto"
+            />
           </div>
         </div>
       </section>
