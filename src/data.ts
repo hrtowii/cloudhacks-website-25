@@ -12,6 +12,12 @@ export interface WorkshopItem {
   signup_link: string;
 }
 
+export interface CloudHacksImage {
+  id: string;
+  src: string;
+  alt: string;
+}
+
 export const faqData: FaqItem[] = [
   {
     id: "item-1",
@@ -99,4 +105,32 @@ export const workshopData: WorkshopItem[] = [
       "Learn to create mobile applications using React Native for both iOS and Android platforms.",
     signup_link: "https://example.com/signup/mobile",
   },
+];
+
+export const cloudhacksImages: CloudHacksImage[] = [
+  {
+    id: "cloudhacks_image_1",
+    src: "./cloudhacks_1.JPG",
+    alt: "CloudHacks event - participants and activities"
+  },
+  {
+    id: "cloudhacks_image_2", 
+    src: "./cloudhacks_2.JPG",
+    alt: "CloudHacks event - coding and collaboration"
+  },
+  {
+    id: "cloudhacks_image_3",
+    src: "./cloudhacks_3.JPG",
+    alt: "CloudHacks event - workshops and learning"
+  },
+  {
+    id: "cloudhacks_image_4",
+    src: "./cloudhacks_4.JPG",
+    alt: "CloudHacks event - innovation and teamwork"
+  },
+  {
+    id: "cloudhacks_image_5",
+    src: "./cloudhacks_5.JPG",
+    alt: "CloudHacks event - presentation and networking"
+  }
 ];

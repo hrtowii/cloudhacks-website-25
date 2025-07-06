@@ -13,14 +13,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  ExternalLink,
-  Users,
-  Trophy,
-  Calendar,
-} from "lucide-react";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ExternalLink, Users, Trophy, Calendar } from "lucide-react";
 import { Link } from "react-router";
 import Layout from "@/components/Layout";
-import { faqData } from "@/data";
+import { faqData, cloudhacksImages } from "@/data";
 
 export default function HomePage() {
   return (
@@ -123,11 +125,23 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&crop=center"
-                alt="CloudHacks participants collaborating"
-                className="rounded-lg shadow-lg w-full h-auto"
-              />
+              <Carousel className="w-full max-w-md mx-auto">
+                <CarouselContent>
+                  {cloudhacksImages.map((image) => (
+                    <CarouselItem key={image.id}>
+                      <div className="p-1">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="rounded-lg shadow-lg w-full h-80 object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
           </div>
         </div>
@@ -265,7 +279,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Contact us at sponsor.cloudhacks@gmail.com{" "}
+                sponsor.cloudhacks@gmail.com
                 <ExternalLink className="ml-2 w-4 h-4" />
               </a>
             </Button>
@@ -277,14 +291,12 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-light-blue to-medium-blue text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl animated-gradient font-bold mb-6">
-            Ready to Join CloudHacks?
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Join CloudHacks?</h2>
           <p className="text-xl mb-8 opacity-90">
             Register now for our hybrid format event and be part of the
             innovation!
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" variant="outline" asChild>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSexEqXY7S5RviJIrCII6WQLUICrdxJAnhslrQ7MTI9R9hUGJQ/viewform"
               target="_blank"
