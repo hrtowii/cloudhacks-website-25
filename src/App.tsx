@@ -16,53 +16,15 @@ import {
   ExternalLink,
   Users,
   Trophy,
-  Code,
   Calendar,
-  Mail,
-  MessageCircle,
 } from "lucide-react";
 import { Link } from "react-router";
+import Layout from "@/components/Layout";
+import { faqData } from "@/data";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-fancy-white via-white to-fancy-white">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-light-blue to-medium-blue rounded-lg flex items-center justify-center">
-              <Code className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-light-blue to-medium-blue bg-clip-text text-transparent">
-              CloudHacks
-            </span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-6">
-            <a href="#about" className=" hover:text-gray-900 transition-colors">
-              About
-            </a>
-            <Link
-              to="/workshops"
-              className=" hover:text-gray-900 transition-colors"
-            >
-              Workshops
-            </Link>
-            <a href="#faq" className=" hover:text-gray-900 transition-colors">
-              FAQ
-            </a>
-            <Button asChild>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSexEqXY7S5RviJIrCII6WQLUICrdxJAnhslrQ7MTI9R9hUGJQ/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Register Now
-              </a>
-            </Button>
-          </nav>
-        </div>
-      </header>
-
+    <Layout>
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center flex flex-col items-center">
@@ -226,96 +188,12 @@ export default function HomePage() {
               className="space-y-4"
               defaultValue="item-1"
             >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>What is a hackathon?</AccordionTrigger>
-                <AccordionContent>
-                  A hackathon is an event where people from all walks of life
-                  get together, form teams, build something new to solve a
-                  problem, or create something interesting and have fun doing
-                  it! Participants (aka hackers) will work in teams of up to 4
-                  to create a website, game, app, or any tech-related product
-                  and bring their ideas to life. At the end of the hackathon,
-                  hackers will pitch their projects to compete for wonderful
-                  prizes.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2">
-                <AccordionTrigger>
-                  What if I've never been to a hackathon before?
-                </AccordionTrigger>
-                <AccordionContent>
-                  That's okay! Whether it's your first or tenth hackathon,
-                  you're welcome to join. Even if you're not familiar with
-                  programming, you don't have to be an expert to participate in
-                  a hackathon. You'll still be able to connect with other
-                  participants, attend workshops, listen to guest speakers, and
-                  learn about the world of tech!
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Who can participate?</AccordionTrigger>
-                <AccordionContent>
-                  We welcome and encourage anyone between high school and
-                  university of any programming skill level to participate.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  How much does it cost to attend?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Nothing! The event is free to join, and we'll provide
-                  catering, workspace, WiFi, and also swag!
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5">
-                <AccordionTrigger>What if I can't code?</AccordionTrigger>
-                <AccordionContent>
-                  Don't let that restrain your interest for computing and love
-                  for innovation! We welcome students of all skill levels and
-                  backgrounds to join CloudHacks. Multiple beginner workshops
-                  will be held at the event, and you'll also be able to work
-                  with mentors and other participants to develop your skills.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-6">
-                <AccordionTrigger>
-                  How many people can there be in a team?
-                </AccordionTrigger>
-                <AccordionContent>
-                  You can work alone or in groups of up to 4 people.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-7">
-                <AccordionTrigger>What can I make?</AccordionTrigger>
-                <AccordionContent>
-                  Anything you want! You can make a website, game, app, or any
-                  tech-related product. You can also make a project that uses
-                  hardware, such as a Raspberry Pi or Arduino. Unfortunately, we
-                  won't be able to provide any hardware on-site, so you'll have
-                  to bring your own. Though we don't have a specific theme, we
-                  will have a few challenge tracks you can tackle.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-8">
-                <AccordionTrigger>
-                  What do I need to bring to CloudHacks?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Devices, chargers, essential needs, and whatever other
-                  accessories (e.g. hardware) you think you should have for your
-                  project. You should also bring a water bottle or anything else
-                  to make the most out of our hackathon. We will be releasing
-                  more details once registrations close.
-                </AccordionContent>
-              </AccordionItem>
+              {faqData.map((faq) => (
+                <AccordionItem key={faq.id} value={faq.id}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
@@ -417,100 +295,6 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-900 text-white">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-light-blue to-medium-blue rounded-lg flex items-center justify-center">
-                  <Code className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">CloudHacks</span>
-              </div>
-              <p className="text-gray-400">
-                Uniting programmers to innovate solutions for global and local
-                challenges.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg animated-gradient font-semibold mb-4">
-                Quick Links
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#about"
-                  className="block text-gray-400 hover:text-white transition-colors"
-                >
-                  About
-                </a>
-                <Link
-                  to="/workshops"
-                  className="block text-gray-400 hover:text-white transition-colors"
-                >
-                  Workshops
-                </Link>
-                <a
-                  href="#faq"
-                  className="block text-gray-400 hover:text-white transition-colors"
-                >
-                  FAQ
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg animated-gradient font-semibold mb-4">
-                Contact Us
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="mailto:hello.cloudhacks@gmail.com"
-                  className="flex items-center text-gray-400 hover:text-white transition-colors"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  hello.cloudhacks@gmail.com
-                </a>
-                <a
-                  href="https://discord.gg/MHUdwwvpcg"
-                  target="_blank"
-                  className="flex items-center text-gray-400 hover:text-white transition-colors"
-                  rel="noreferrer"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Discord
-                </a>
-                <a
-                  href="https://www.instagram.com/cloudhacks__"
-                  target="_blank"
-                  className="flex items-center text-gray-400 hover:text-white transition-colors"
-                  rel="noreferrer"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Instagram
-                </a>
-              </div>
-              <div className="mt-4">
-                <p className="text-sm text-gray-400">
-                  Sponsors:{" "}
-                  <a
-                    href="mailto:sponsor.cloudhacks@gmail.com"
-                    className="text-light-blue hover:text-medium-blue"
-                  >
-                    sponsor.cloudhacks@gmail.com
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 CloudHacks. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }
