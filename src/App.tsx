@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
+
 import {
   Card,
   CardDescription,
@@ -34,7 +36,11 @@ export default function HomePage() {
             CloudHacks
           </h1> */}
           <div className="mb-10">
-            <img src="./blockynew.png" alt="Cloudhacks 2025" />
+            <img
+              src="./blockynew.png"
+              alt="Cloudhacks 2025"
+              className="responsive-img"
+            />
           </div>
           <p className="text-xl md:text-2xl  mb-8 max-w-3xl mx-auto">
             A student-led hackathon uniting programmers from across the country
@@ -84,7 +90,7 @@ export default function HomePage() {
       {/* About Section */}
       <section id="about" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl animated-gradient font-bold mb-6">
                 About CloudHacks
@@ -125,7 +131,14 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <Carousel className="w-full max-w-md mx-auto">
+              <Carousel
+                className="w-full max-w-md mx-auto"
+                plugins={[
+                  Autoplay({
+                    delay: 2000,
+                  }),
+                ]}
+              >
                 <CarouselContent>
                   {cloudhacksImages.map((image) => (
                     <CarouselItem key={image.id}>
@@ -133,14 +146,14 @@ export default function HomePage() {
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="rounded-lg shadow-lg w-full h-80 object-cover"
+                          className="responsive-img rounded-lg shadow-lg w-full h-80 object-cover"
                         />
                       </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                {/* <CarouselPrevious />
+                <CarouselNext /> */}
               </Carousel>
             </div>
           </div>
@@ -303,7 +316,7 @@ export default function HomePage() {
             <img
               src="cloud_sponsor.png"
               alt="sponsorpls"
-              className="my-10 max-w-md mx-auto"
+              className="responsive-img my-10 max-w-md w-full mx-auto"
             />
           </div>
         </div>

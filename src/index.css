@@ -48,6 +48,8 @@
 
 @layer base {
     html {
+        width: 100%;
+        overflow-x: hidden;
         @apply font-outfit;
         @apply text-latte-rose-pine-text dark:text-latte-rose-pine-text;
         @apply bg-latte-rose-pine-base dark:bg-rose-pine-base;
@@ -63,7 +65,12 @@
         -webkit-text-fill-color: transparent;
         animation: gradient-cycle 3s ease infinite;
     }
-
+    .responsive-img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
     @keyframes gradient-cycle {
         0% {
             background-position: 0% 50%;
