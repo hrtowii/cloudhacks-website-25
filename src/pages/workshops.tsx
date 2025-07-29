@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import { workshopData } from "@/data";
+import SubscribeForm from "@/components/SubscribeForm";
 
 export default function WorkshopsPage() {
   return (
@@ -15,15 +16,19 @@ export default function WorkshopsPage() {
               Workshops
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Learn from industry experts and build your skills with our hands-on workshops.
-              From beginner-friendly sessions to advanced topics, we have something for everyone.
+              Learn from industry experts and build your skills with our
+              hands-on workshops. From beginner-friendly sessions to advanced
+              topics, we have something for everyone.
             </p>
           </div>
 
           {/* Workshops Grid */}
           <div className="space-y-12">
             {workshopData.map((workshop, index) => (
-              <Card key={index} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card
+                key={index}
+                className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
                 <CardContent className="p-0">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Image Section */}
@@ -34,7 +39,7 @@ export default function WorkshopsPage() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    
+
                     {/* Content Section */}
                     <div className="p-8 flex flex-col justify-center">
                       <div className="mb-4">
@@ -48,7 +53,7 @@ export default function WorkshopsPage() {
                           {workshop.description}
                         </p>
                       </div>
-                      
+
                       <div className="mt-auto">
                         <Button
                           size="lg"
@@ -72,6 +77,16 @@ export default function WorkshopsPage() {
             ))}
           </div>
 
+          {/* Subscribe Section */}
+          <div className="mt-20">
+            <div className="max-w-2xl mx-auto">
+              <SubscribeForm
+                title="Never Miss a Workshop"
+                description="Subscribe to get notified about upcoming workshops, special events, and exclusive learning opportunities. Stay ahead with the latest in tech education!"
+              />
+            </div>
+          </div>
+
           {/* Call to Action */}
           <div className="text-center mt-20">
             <div className="bg-gradient-to-r from-light-blue to-medium-blue rounded-lg p-8 text-white">
@@ -81,11 +96,7 @@ export default function WorkshopsPage() {
               <p className="text-xl mb-6 opacity-90">
                 Join our workshops and learn from the best in the industry
               </p>
-              <Button
-                size="lg"
-                variant="secondary"
-                asChild
-              >
+              <Button size="lg" variant="secondary" asChild>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSexEqXY7S5RviJIrCII6WQLUICrdxJAnhslrQ7MTI9R9hUGJQ/viewform"
                   target="_blank"

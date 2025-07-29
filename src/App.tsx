@@ -23,6 +23,7 @@ import { ExternalLink, Users, Trophy, Calendar } from "lucide-react";
 import { Link } from "react-router";
 import Layout from "@/components/Layout";
 import { faqData, cloudhacksImages } from "@/data";
+import SubscribeForm from "@/components/SubscribeForm";
 
 export default function HomePage() {
   return (
@@ -237,6 +238,18 @@ export default function HomePage() {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Subscribe Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto">
+          <div className="max-w-2xl mx-auto">
+            <SubscribeForm
+              title="Join Our Community"
+              description="Subscribe to our mailing list to get the latest updates about CloudHacks events, workshops, and announcements. Be the first to know about registration openings and exclusive opportunities!"
+            />
           </div>
         </div>
       </section>
