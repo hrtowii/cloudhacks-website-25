@@ -18,8 +18,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ExternalLink, Users, Trophy, Calendar } from "lucide-react";
 import { Link } from "react-router";
