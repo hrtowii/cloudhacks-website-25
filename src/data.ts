@@ -70,40 +70,31 @@ export const faqData: FaqItem[] = [
 
 export const workshopData: WorkshopItem[] = [
   {
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop&crop=center",
-    speaker: "Jane Doe",
-    title: "Introduction to Web Development",
+    image: "https://igate-eg.com/wp-content/uploads/2023/12/Python-Symbol.png",
+    speaker: "Lucas",
+    title: "Python and Data Structures",
     description:
-      "Learn the fundamentals of HTML, CSS, and JavaScript to build your first website from scratch.",
-    signup_link: "https://example.com/signup/web-dev",
+      "Learn the fundamentals of Python programming and explore data structures like lists, dictionaries, and more. This workshop aims to give you basic skills to start your journey into programming as a whole. ",
+    signup_link:
+      "https://www.onepa.gov.sg/events/bishan-yn-x-cloudhacks-python-data-structures-58413584",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1555949963-ff9fe46c723e?w=600&h=400&fit=crop&crop=center",
-    speaker: "John Smith",
-    title: "Introduction to Block Programming",
+      "https://d3mxt5v3yxgcsr.cloudfront.net/courses/6020/course_6020_image.png",
+    speaker: "To be decided!",
+    title: "HTML, CSS, and JavaScript",
     description:
-      "Get started with Python programming language and learn to build simple applications.",
+      "Get started with web development by learning the core technologies: HTML, CSS, and JavaScript. This workshop will cover the basics of building web pages and styling them. You can also join our next workshop on Python Flask to become a full-stack developer! Registration not open yet.",
     signup_link: "https://example.com/signup/python",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=600&h=400&fit=crop&crop=center",
-    speaker: "Sarah Johnson",
-    title: "Introduction to Web Development: HTML, CSS, JavaScript",
+      "https://miro.medium.com/v2/resize:fit:640/1*XzIRJGujfqAiOV2EIQgR_Q.png",
+    speaker: "Zhuo En",
+    title: "Python Flask",
     description:
-      "Dive into React.js and learn how to build interactive user interfaces for modern web applications.",
+      "Dive into full-stack web development with Python Flask. This workshop will teach you how to build dynamic web applications using Flask, a lightweight and intuitive web framework for Python. Registration not open yet.",
     signup_link: "https://example.com/signup/react",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop&crop=center",
-    speaker: "Mike Chen",
-    title: "Mobile App Development",
-    description:
-      "Learn to create mobile applications using React Native for both iOS and Android platforms.",
-    signup_link: "https://example.com/signup/mobile",
   },
 ];
 
@@ -111,26 +102,26 @@ export const cloudhacksImages: CloudHacksImage[] = [
   {
     id: "cloudhacks_image_1",
     src: "./cloudhacks_1.JPG",
-    alt: "CloudHacks event - participants and activities"
+    alt: "CloudHacks event - participants and activities",
   },
   {
-    id: "cloudhacks_image_2", 
+    id: "cloudhacks_image_2",
     src: "./cloudhacks_2.JPG",
-    alt: "CloudHacks event - coding and collaboration"
+    alt: "CloudHacks event - coding and collaboration",
   },
   {
     id: "cloudhacks_image_3",
     src: "./cloudhacks_3.JPG",
-    alt: "CloudHacks event - workshops and learning"
+    alt: "CloudHacks event - workshops and learning",
   },
   {
     id: "cloudhacks_image_4",
     src: "./cloudhacks_4.JPG",
-    alt: "CloudHacks event - innovation and teamwork"
+    alt: "CloudHacks event - innovation and teamwork",
   },
   {
     id: "cloudhacks_image_5",
     src: "./cloudhacks_5.JPG",
-    alt: "CloudHacks event - presentation and networking"
-  }
+    alt: "CloudHacks event - presentation and networking",
+  },
 ];
